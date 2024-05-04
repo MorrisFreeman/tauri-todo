@@ -1,4 +1,3 @@
-import React from 'react';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import Checkbox from '@mui/material/Checkbox';
