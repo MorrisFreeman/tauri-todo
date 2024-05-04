@@ -23,7 +23,7 @@ function App() {
 
   return (
       <Box sx={{ height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-        <Typography variant="h4" sx={{ my: 2, mx: 2, color: 'primary.main' }}>Simple Todo</Typography>
+        <Typography variant="h4" sx={{ my: 2, mx: 2, color: 'primary.main', fontWeight: 'bold' }}>Simple ToDo</Typography>
         <Box sx={{ overflowY: 'auto', flexGrow: 1, mx: 2 }}>
           {todos.map(todo => (
             <TodoItems
@@ -41,9 +41,9 @@ function App() {
             onChange={(e) => setInputTodo(e.target.value)}
             placeholder="Enter a todo..."
             onKeyDown={(e) => {
-              if (e.key === 'Enter') {
+                if (e.key === 'Enter' && e.keyCode !== 229) {
                 handleSubmit();
-              }
+                }
             }}
           />
           <Button onClick={handleSubmit} disabled={!inputTodo} variant="contained" color="primary" sx={{ ml: 1 }}>POST</Button>

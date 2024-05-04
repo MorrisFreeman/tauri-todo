@@ -15,6 +15,9 @@ function TodoItems({ todo, onCheck, onDelete }: { todo: Todo; onCheck: (id: numb
       <Typography sx={{ flexGrow: 1, mx: 1, lineHeight: '42px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', textDecoration: todo.completed ? 'line-through' : 'none' }}>
         {todo.text}
       </Typography>
+      <Typography sx={{ mx: 1, alignSelf: 'center', color: 'text.secondary', fontSize: '0.75rem', whiteSpace: 'nowrap' }}>
+        {todo.createdAt}
+      </Typography>
       <DeleteForeverIcon
         onClick={() => onDelete(todo.id)}
         sx={{ cursor: 'pointer', alignSelf: 'center' }}

@@ -15,8 +15,8 @@ export function useTodos() {
 
   const fetchTodos = async () => {
     try {
-      const todos = await invoke("get_todos") as any[];
-      setTodos(convertToTodos(todos));
+      const newTodos = await invoke("get_todos") as any[];
+      setTodos(convertToTodos(newTodos));
     } catch (error) {
       console.error('Failed to fetch todos:', error);
     }
@@ -24,7 +24,7 @@ export function useTodos() {
 
   const addTodo = async (text: string) => {
     try {
-      await invoke("post_todo", { text });
+      await invoke("add_todo", { text });
       await fetchTodos();
     } catch (error) {
       console.error('Failed to add todo:', error);
